@@ -26,8 +26,8 @@
     <tbody>
     <tr th:each="user: ${users}">
         <form th:action="@{/updateUser}" method="GET">
-            <input type="hidden" name="ID" th:value="${user.getID()}"/>
-            <td th:text="${user.getID()}"></td>
+            <input type="hidden" name="id" th:value="${user.getId()}"/>
+            <td th:text="${user.getId()}"></td>
             <td th:text="${user.getName()}"></td>
             <td th:text="${user.getSurname()}"></td>
             <td>
@@ -35,7 +35,7 @@
             </td>
         </form>
         <form th:action="@{/deleteUser}" th:method="post">
-            <input type="hidden" name="ID" th:value="${user.getID()}"/>
+            <input type="hidden" name="id" th:value="${user.getId()}"/>
             <input type="hidden" name="_method" th:value="DELETE"/>
             <td>
                 <button type="submit" class="btn btn-primary">Delete</button>

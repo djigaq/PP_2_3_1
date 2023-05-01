@@ -28,8 +28,8 @@ public class UserDaoImp implements UserDao {
 
     @Override
     @Transactional
-    public User getUser(int ID) {
-        return entityManager.find(User.class, ID);
+    public User getUser(int id) {
+        return entityManager.find(User.class, id);
     }
 
     @Override
@@ -41,8 +41,8 @@ public class UserDaoImp implements UserDao {
 
     @Override
     @Transactional
-    public void deleteUser(int ID) {
-        entityManager.remove(getUser(ID));
+    public void deleteUser(int id) {
+        entityManager.remove(getUser(id));
         entityManager.flush();
     }
 }

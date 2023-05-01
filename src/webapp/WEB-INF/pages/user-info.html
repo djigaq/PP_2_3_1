@@ -11,7 +11,7 @@
 <h2>New User</h2>
 <br>
 <form th:method="POST" th:action="@{/saveUser}" th:object="${newUser}">
-    <input type="hidden" th:field="*{ID}" id="ID"/>
+    <input type="hidden" th:field="*{id}" id="id"/>
     <label for="name"> Enter name: </label>
     <input type="text" th:field="*{name}" id="name"/>
     <label for="surname"> Enter surname: </label>

@@ -10,7 +10,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int id;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
@@ -19,18 +19,18 @@ public class User {
     public User() {
     }
 
-    public User(int ID, String name, String surname) {
-        this.ID = ID;
+    public User(int id, String name, String surname) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -54,18 +54,18 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return ID == user.ID && Objects.equals(name, user.name) && Objects.equals(surname, user.surname);
+        return id == user.id && Objects.equals(name, user.name) && Objects.equals(surname, user.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ID, name, surname);
+        return Objects.hash(id, name, surname);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "ID=" + ID +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", family='" + surname + '\'' +
                 '}';

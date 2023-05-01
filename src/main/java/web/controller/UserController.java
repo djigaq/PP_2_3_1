@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping(value = "/saveUser")
     public String saveUser(@ModelAttribute("newUser") User user) {
-        if (user.getID() == 0) {
+        if (user.getId() == 0) {
             userService.saveUsers(user);
         } else {
             userService.updateUser(user);
@@ -36,20 +36,20 @@ public class UserController {
     }
 
     @GetMapping(value = "/updateUser")
-    public String updateEmployee(@RequestParam("ID") int ID, Model model) {
-        model.addAttribute("newUser", userService.getUser(ID));
+    public String updateEmployee(@RequestParam("id") int id, Model model) {
+        model.addAttribute("newUser", userService.getUser(id));
         return "user-info";
     }
 
     @PatchMapping(value = "/updateUser")
-    public String updateUser(@RequestParam("ID") int ID, @RequestBody User user) {
+    public String updateUser(@RequestParam("id") int id, @RequestBody User user) {
         userService.updateUser(user);
         return "redirect:/";
     }
 
     @DeleteMapping(value = "/deleteUser")
-    public String deleteUser(@RequestParam("ID") int ID) {
-        userService.deleteUser(ID);
+    public String deleteUser(@RequestParam("id") int id) {
+        userService.deleteUser(id);
         return "redirect:/";
     }
 }
